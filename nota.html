@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nota Mustari Tani</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        background: #f9fafb;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        background: #fff;
+        width: 480px;
+        padding: 32px 32px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding-bottom: 20px;
+        height: auto;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .header img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        margin-bottom: 4px;
+      }
+      .header h1 {
+        font-size: 18px;
+        color: #1a8a3a;
+        margin: 4px 0;
+      }
+      .header p {
+        font-size: 12px;
+        color: #444;
+        line-height: 1.4;
+        margin: 0;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 16px 0;
+      }
+      .info {
+        font-size: 13px;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 8px;
+      }
+      .info .row {
+        display: flex;
+        justify-content: space-between;
+      }
+      .info strong {
+        font-weight: 500;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 8px;
+        font-size: 13px;
+      }
+      th,
+      td {
+        padding: 8px 4px;
+        text-align: left;
+      }
+      th {
+        border-bottom: 1.5px solid #ccc;
+        font-weight: 600;
+        color: #111;
+      }
+      tr:not(:last-child) td {
+        border-bottom: 1px dashed #ddd;
+      }
+      td:nth-child(3),
+      th:nth-child(3),
+      td:nth-child(4),
+      th:nth-child(4) {
+        text-align: center;
+      }
+      td:nth-child(5),
+      th:nth-child(5) {
+        text-align: right;
+      }
+      .total {
+        text-align: right;
+        font-weight: 600;
+        font-size: 15px;
+        color: #1a8a3a;
+        margin-top: 10px;
+        border-top: 2px solid #1a8a3a;
+        padding-top: 6px;
+        margin-bottom: 70px
+      }
+      .footer {
+        text-align: center;
+        font-size: 12px;
+        color: #555;
+        margin-top: 0;
+        margin-bottom: 30px; /* biar gak terlalu jauh ke bawah */
+        padding-bottom: 0;
+      }
+      .footer b {
+        color: #1a8a3a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <!-- Header -->
+        <div class="header">
+          <img src="logo.png" alt="Logo Mustari Tani" />
+          <h1>MUSTARI TANI</h1>
+          <p>
+            Jl. Terusan Sersan Bajuri, Cihideung, Kec. Parongpong,<br />
+            Kab. Bandung Barat, Jawa Barat 40559<br />
+            Telp: 081312399873
+          </p>
+        </div>
+
+        <hr />
+
+        <!-- Info pelanggan -->
+        <div class="info">
+          <div class="row"><strong>No. Nota:</strong><span>49</span></div>
+          <div class="row">
+            <strong>Tanggal:</strong><span>29 Oktober 2025</span>
+          </div>
+          <div class="row">
+            <strong>Pelanggan:</strong><span>kak fitriadi</span>
+          </div>
+          <div class="row"><strong>Alamat:</strong><span>kalimantan</span></div>
+          <div class="row"><strong>Telepon:</strong><span>-</span></div>
+        </div>
+
+        <!-- Tabel barang -->
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Barang</th>
+              <th>Qty</th>
+              <th>Harga</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>mangga yuwen -6</td>
+              <td>1</td>
+              <td>600.000</td>
+              <td>600.000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>jambu king citra</td>
+              <td>2</td>
+              <td>300.000</td>
+              <td>600.000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>jambu gg</td>
+              <td>1</td>
+              <td>175.000</td>
+              <td>175.000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Total -->
+        <div class="total">Total: Rp 1.375.000</div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        Terima kasih telah berbelanja di <b>Mustari Tani</b>
+      </div>
+    </div>
+  </body>
+</html>
