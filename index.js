@@ -3,7 +3,6 @@ const qrcode = require("qrcode-terminal");
 const fs = require("fs");
 const path = require("path");
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
-const isRailway = process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_PROJECT_ID;
 
 // === Buat folder logs otomatis
 const logDir = path.join(__dirname, "logs");
@@ -24,11 +23,8 @@ const client = new Client({
 });
 
 client.on("qr", (qr) => {
-  if (isRailway) {
-    console.log("📱 QR Code terdeteksi — jalankan bot di lokal untuk scan QR.");
-  } else {
-    qrcode.generate(qr, { small: true });
-  }
+  console.log("📱 Scan QR Code berikut untuk login WhatsApp:");
+  qrcode.generate(qr, { small: true });
 });
 
 client.on("ready", () => {
