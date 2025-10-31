@@ -1,12 +1,11 @@
-# Gunakan base image Node.js dengan Chrome support
+# Base image Node.js 18 dengan Debian Bullseye (stabil & ringan)
 FROM node:18-bullseye
 
-# Install dependensi sistem untuk Chromium
+# Install dependensi minimal agar Chromium jalan dengan aman
 RUN apt-get update && apt-get install -y \
-  wget \
+  chromium \
   ca-certificates \
   fonts-liberation \
-  libappindicator3-1 \
   libasound2 \
   libatk-bridge2.0-0 \
   libatk1.0-0 \
@@ -35,15 +34,19 @@ RUN apt-get update && apt-get install -y \
   xdg-utils \
   && rm -rf /var/lib/apt/lists/*
 
+# Set path Chromium agar puppeteer tahu
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+ENV NODE_ENV=production
+
 # Set working directory
 WORKDIR /app
 
 # Copy package files dan install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm ci --only=production
 
 # Copy semua file project
 COPY . .
 
-# Jalankan bot
-CMD ["npm", "start"]
+# Jalankan aplikasi
+CMD ["node", "index.js"]
